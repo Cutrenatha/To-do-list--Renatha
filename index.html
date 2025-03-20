@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Pastel ✨</title>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #EBD8D3;
+            font-family: 'Poppins', sans-serif;
+            color: #4a4a4a;
+        }
+
+        .container {
+            width: 50%;
+            max-width: 800px;
+            background: rgba(245, 245, 240, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-box {
+            padding: 10px;
+            border: 2px solid #c3c9c3;
+            background-color: #f5f5f0;
+            color: #4a4a4a;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-box:focus {
+            border-color: #a0b2a3;
+            box-shadow: 0 0 10px rgba(160, 178, 163, 0.5);
+        }
+
+        .task-item {
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-item:nth-child(odd) {
+            background-color: #f0dfd8;
+        }
+
+        .task-item:nth-child(even) {
+            background-color: #d5e2d7;
+        }
+
+        button {
+            background-color: #a0b2a3;
+            color: #f5f5f0;
+        }
+
+        button:hover {
+            background-color: #8a9c8b;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center h-screen">
+    <div class="container text-center border-4 border-[#92A28D]">
+        <h1 class="text-3xl font-bold text-[#D4B7AE]"> To-Do List </h1>
+        <div class="mt-4 flex space-x-2">
+            <input id="taskInput" type="text" placeholder="Tambahkan tugas..." class="input-box flex-1">
+            <input id="taskDateTime" type="datetime-local" class="input-box">
+        </div>
+
+        <button onclick="addTask()" class="mt-4 w-full text-white p-3 rounded-lg bg-[#92A28D]">
+            Tambah
+        </button>        
+        
+
+        <ul id="taskList" class="mt-4 space-y-3"></ul>
+    </div>
+</body>
+</html>
